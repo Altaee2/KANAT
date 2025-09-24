@@ -427,35 +427,6 @@ body {
 }
 
 
-/* تنسيقات قسم الإحصائيات */
-
-.stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-content: center;
-}
-
-.stat-item {
-    text-align: center;
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.stat-item h2 {
-    font-size: 3rem;
-    color: var(--accent-color);
-    margin: 0;
-}
-
-.stat-item p {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-
 /* تنسيقات قسم التواصل */
 
 #contact {
@@ -881,4 +852,140 @@ body {
     /* يتغير لون الزر عند الهوفر */
     transform: scale(1.05);
     /* الزر يكبر قليلاً */
+}
+
+
+/* الألوان والخطوط */
+
+
+/* تنسيقات الحاوية الرئيسية للبطاقات */
+
+.articles {
+    display: flex;
+    /* لترتيب العناصر (البطاقات) جنبًا إلى جنب */
+    flex-wrap: wrap;
+    /* للسماح بكسر السطر إذا كانت الشاشة صغيرة */
+    gap: 25px;
+    /* مسافة بين البطاقات */
+    justify-content: center;
+    /* توسيط البطاقات في المنتصف */
+    align-items: flex-start;
+    /* تبدأ البطاقات من الأعلى */
+}
+
+
+/* التنسيق الأساسي للبطاقة */
+
+.article-card {
+    /* تحديد عرض أقصى لكل بطاقة لتبدو أنحف */
+    max-width: 350px;
+    width: 100%;
+    /* تأخذ العرض المتاح ضمن الـ max-width */
+    background-color: #313131;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card img {
+    max-width: 100%;
+    /* ضمان أن الصورة لا تتجاوز عرض البطاقة */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.article-card h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #E0E0E0;
+}
+
+
+/* ------------------------------------------------------------------ */
+
+
+/* تنسيقات خاصة لبطاقة "أسعار العدادات" */
+
+.price-card {
+    border: 2px solid #76FF03;
+}
+
+.price-card h3 {
+    color: #76FF03;
+}
+
+.price-link {
+    display: inline-block;
+    background-color: #76FF03;
+    color: #121212;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.price-link:hover {
+    background-color: #AEEA00;
+    box-shadow: 0 0 15px #76FF03;
+}
+
+
+/* ------------------------------------------------------------------ */
+
+
+/* تنسيقات خاصة لبطاقة "ما هو متجر السلطان" */
+
+.about-card {
+    border: 2px solid #03A9F4;
+}
+
+.about-card h3 {
+    color: #03A9F4;
+}
+
+.about-link {
+    display: inline-block;
+    background-color: transparent;
+    color: #03A9F4;
+    border: 2px solid #03A9F4;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.about-link:hover {
+    background-color: #03A9F4;
+    color: #121212;
+}
+
+
+/* ------------------------------------------------------------------ */
+
+
+/* التجاوب (Responsive) للشاشات الصغيرة */
+
+@media (max-width: 768px) {
+    .articles {
+        flex-direction: column;
+        /* جعل البطاقات تظهر فوق بعضها البعض على الهواتف */
+        align-items: center;
+        gap: 20px;
+    }
+    .article-card {
+        max-width: 90%;
+        /* تأخذ عرض 90% من الشاشة لتبدو جيدة على الهواتف */
+    }
 }
